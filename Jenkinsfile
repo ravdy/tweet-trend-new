@@ -1,16 +1,10 @@
 pipeline {
     agent any
-
+environment {
+  PATH = "/usr/share/maven:$PATH"
+}
     stages {
-        stage('CLONE-CODE') {
-            steps {
-                
-                git branch: 'main', url: 'https://github.com/venkat44488/tweet-trend-new.git'
-                  }
-        }
-
-
-         stage('build') {
+            stage('build') {
             steps {
                 mvn clean deploy
                   }
