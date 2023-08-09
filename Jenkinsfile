@@ -12,7 +12,7 @@ pipeline {
 
          stage('build') {
             steps {
-                echo " welcoem to build"
+                mvn clean deploy
                   }
         }
     }
