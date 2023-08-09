@@ -6,7 +6,7 @@ pipeline {
             steps {
                 sh 'pwd'
                 sh 'ls -l'
-                sh 'mvn clean deploy'
+                sh 'mvn clean package deploy'
                   }
         }
     }
