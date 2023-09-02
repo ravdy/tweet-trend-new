@@ -4,11 +4,15 @@ pipeline {
             label "maven"
         }
     }
+environment {
+    PATH = "/opt/apache-maven-3.9.4/bin:$PATH"
+}
+  
 
     stages {
-        stage('Clone-code') {
+        stage('build') {
             steps {
-                git branch: 'main', url: 'https://github.com/rajivsiddiqui/shankar-p2-code.git'
+                sh 'mvn clean deploy'
             }
         }
     }
