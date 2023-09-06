@@ -1,5 +1,5 @@
 # Test application
-test5
+test6
 This is a small applicaiton which contains main and test folders.  
 Main contains application code.  
 Test contains test cases.  
