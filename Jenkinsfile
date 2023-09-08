@@ -4,9 +4,9 @@ pipeline {
             label 'maven'
         }
     }
-    environment {
-        PATH ="/home/ubuntu/apache-maven-3.9.4/bin:$PATH"
-    }
+    // environment {
+    //     PATH = "/home/ubuntu/apache-maven-3.9.4/bin:$PATH"
+    // }
     stages {
         stage("build") {
             steps {
