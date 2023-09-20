@@ -1,0 +1,9 @@
+sonar.verbose=true
+sonar.organization=Project01
+sonar.projectkey=project01-key
+sonar.projectName=boaztrend
+sonar.language=java
+sonar.sourceEncoding=UTF-8
+sonar.sources=.
+sonar.java.binaries=target/classes
+sonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
