@@ -1,1 +1,6 @@
 ./target/*
+**/*.tfstate
+**/*.tfstate.*
+**/.terraform/*
+**/.terraform.lock.hcl
+demo_key.pem
