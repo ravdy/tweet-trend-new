@@ -99,7 +99,7 @@ environment {
         stage ("k8s manifest deploy"){
             steps{
                 script{
-                    echo'execute manifest file for k8s'
+                    
                     sh './deploy.sh'
                 }
             }
