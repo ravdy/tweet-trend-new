@@ -1,6 +1,6 @@
 def registry = 'https://balli.jfrog.io/'
 def imageName = 'balli.jfrog.io/balli-docker/ttrend'
-def version   = '2.0.2'
+def version   = '2.1.2'
 pipeline {
     agent {
         node {
