@@ -1,6 +1,6 @@
 def registry = 'https://balli.jfrog.io/'
 def imageName = 'balli.jfrog.io/balli-docker/ttrend'
-def version   = '2.1.2'
+def version   = '2.1.3'
 pipeline {
     agent {
         node {
@@ -99,7 +99,7 @@ environment {
         stage ("k8s manifest deploy"){
             steps{
                 script{
-                    
+
                     sh './deploy.sh'
                 }
             }
