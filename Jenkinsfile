@@ -1,4 +1,6 @@
 def registry = 'https://balli.jfrog.io/'
+def imageName = 'balli.jfrog.io/balli-docker/ttrend'
+def version   = '2.0.2'
 pipeline {
     agent {
         node {
@@ -71,7 +73,28 @@ environment {
             
             }
         }   
-    }     
+    }
+    stage(" Docker Build ") {
+          steps {
+            script {
+               echo '<--------------- Docker Build Started --------------->'
+               app = docker.build(imageName+":"+version)
+               echo '<--------------- Docker Build Ends --------------->'
+            }
+          }
+        }
+
+                stage (" Docker Publish "){
+            steps {
+                script {
+                   echo '<--------------- Docker Publish Started --------------->'  
+                    docker.withRegistry(registry, 'jfrog-artifactory'){
+                        app.push()
+                    }    
+                   echo '<--------------- Docker Publish Ended --------------->'  
+                }
+            }
+        }     
 }      
 }
 
