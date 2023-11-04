@@ -3,10 +3,15 @@ pipeline {
         label 'maven'
     }
 
+   environment {
+    PATH = "/opt/apache-maven-3.9.5/bin:$PATH"
+}
     stages {
-        stage('Clone Repository') {
+        stage("build"){
             steps {
-                git branch: 'main', url: 'https://github.com/EngrAdewale/tweet-trend-new.git'
+                 echo "----------- build started ----------"
+                sh 'mvn clean deploy -Dmaven.test.skip=true'
+                 echo "----------- build complted ----------"
             }
         }
 
