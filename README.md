@@ -1,7 +1,7 @@
-# Ttrend application
+# New Test Job application to test the webhook
 
-This is a small applicaiton which contains main and test folders.  
-Main contains application code.  
-Test contains test cases.  
-It also contains pom.xml which has all dependences and artfact name and version
+This is a small application which contains main and test folders.  
+The Main contains the application code.  
+The test contains test cases.  
+It also contains pom.xml which has all dependencies and artefact name and version
 
