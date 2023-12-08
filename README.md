@@ -1,6 +1,6 @@
 # Ttrend application
 
-hi
+
 
 
 This is a small applicaiton which contains main and test folders.  
