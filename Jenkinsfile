@@ -6,12 +6,14 @@ pipeline {
     }
     environment {
         PATH = "/opt/apache-maven-3.9.6/bin:$PATH"
-        JAVA_HOME = "/usr/lib/jvm/java-11-openjdk-amd64"
+        JAVA_HOME = "/usr/lib/jvm/java-11-openjdk-amd64"  // Adjust the path based on your system
     }
     stages {
         stage("Build") {
             steps { 
-                sh 'mvn clean deploy'
+                script {
+                    sh 'mvn clean deploy'
+                }
             }
         }
 
@@ -20,8 +22,10 @@ pipeline {
                 scannerHome = tool 'valaxy-sonar-scanner'
             }
             steps {
-                withSonarQubeEnv('valaxy-sonarqube-server') {
-                    sh "${scannerHome}/bin/sonar-scanner"
+                script {
+                    withSonarQubeEnv('valaxy-sonarqube-server') {
+                        sh "${scannerHome}/bin/sonar-scanner"
+                    }
                 }
             }
         }
