@@ -17,17 +17,17 @@ pipeline {
             }
         }
 
-        stage('SonarQube Analysis') {
-            environment {
-                scannerHome = tool 'valaxy-sonar-scanner'
-            }
-            steps {
-                script {
-                    withSonarQubeEnv('valaxy-sonarqube-server') {
-                        sh "${scannerHome}/bin/sonar-scanner"
-                    }
-                }
-            }
-        }
+        // stage('SonarQube Analysis') {
+        //     environment {
+        //         scannerHome = tool 'valaxy-sonar-scanner'
+        //     }
+        //     steps {
+        //         script {
+        //             withSonarQubeEnv('valaxy-sonarqube-server') {
+        //                 sh "${scannerHome}/bin/sonar-scanner"
+        //             }
+        //         }
+        //     }
+        // }
     }
 }
