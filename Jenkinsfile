@@ -7,9 +7,9 @@ pipeline {
     }
 
     stages {
-        stage('git clone') {
+        stage('build') {
             steps {
-                git branch: 'main', url: 'https://github.com/shiva2devops/java-project.git'
+                sh 'mvn clean deploy'
             }
         }
     }
