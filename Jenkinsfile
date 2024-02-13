@@ -10,17 +10,16 @@ pipeline {
         stage('build') {
             steps {
                 sh 'mvn clean deploy -Dmaven.test.skip=true'
+                }
             }
-        }
 
         stage{
             steps('unit test') {
                 echo "--------unit test started-----------"
                 sh 'mvn surefire-report:report'
                 echo "--------unit test completed-----------"
+                }
             }
-
-        }
 
         stage('SonarQube analysis') {
             environment{
@@ -29,7 +28,7 @@ pipeline {
             steps{
                 withSonarQubeEnv('sonarqube-server') { // If you have configured more than one global server connection, you can specify its name
                 sh "${scannerHome}/bin/sonar-scanner"
-             }
+                }
             }
         }
 
@@ -40,10 +39,10 @@ pipeline {
                 def qg = waitForQualityGate() // Reuse taskId previously collected by withSonarQubeEnv
                 if (qg.status != 'OK') {
                 error "Pipeline aborted due to quality gate failure: ${qg.status}"
-            }
-            }
                 }
-    }
-}
+                }
+                }
+            }
+        }
     }
 }
