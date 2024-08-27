@@ -1,10 +1,5 @@
-#!/bin/bash
-
-# Print the current working directory
-echo "Current directory: $(pwd)"
-
 # Print Maven version to ensure it's installed
-mvn -v
+mvn --version
 
 # Run Maven deploy command
 mvn clean deploy
