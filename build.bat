@@ -1,5 +1,7 @@
 rem Print Maven version to ensure it's installed
-mvn --version
+C:\Users\Lenovo\hytrust\maven\bin\mvn.cmd --version
+
 
 rem Run Maven deploy command
-mvn clean deploy
+C:\Users\Lenovo\hytrust\maven\bin\mvn.cmd clean deploy
+
