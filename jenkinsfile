@@ -1,1 +1,28 @@
+pipeline {
+    agent {
+        node{
+            label "java-slave"
+        }
+    }
+
+    stages {
+        stage('git checkout') {
+            steps {
+
+                git branch: 'dev', url: 'https://github.com/kasireddysairam/tweet-trend-new.git'
+            }
+        }
+     stage(' mvn build') {
+            steps {
+
+        sh 'mvn clean deploy -Dmaven.test.skip=true'
+            }
+        }
+
+
+
+
+    }
+
+}
 
